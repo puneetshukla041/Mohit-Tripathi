@@ -11,7 +11,7 @@ const Navbar = () => {
       </div>
       <div className="flex justify-center gap-4 -mr-4 text-2xl ems-center">
         <a
-          href="https://x.com/steeltroops_ai"
+          href="https://x.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="cursor-pointer hover:text-cyan-300"
@@ -19,7 +19,7 @@ const Navbar = () => {
           <FaXTwitter />
         </a>
         <a
-          href="https://github.com/steeltroops-ai"
+          href="https://github.com"
           target="_blank"
           rel="noopener noreferrer"
           className="cursor-pointer hover:text-cyan-300"
@@ -27,7 +27,7 @@ const Navbar = () => {
           <FiGithub />
         </a>
         <a
-          href="https://instagram.com/steeltroops_ai"
+          href="https://instagram.com"
           target="_blank"
           rel="noopener noreferrer"
           className="cursor-pointer hover:text-cyan-300"
@@ -35,7 +35,7 @@ const Navbar = () => {
           <FiInstagram />
         </a>
         <a
-          href="https://linkedin.com/in/steeltroops-ai"
+          href="https://linkedin.com/in/"
           target="_blank"
           rel="noopener noreferrer"
           className="cursor-pointer hover:text-cyan-300"
@@ -43,7 +43,7 @@ const Navbar = () => {
           <FaLinkedinIn />
         </a>
         <a
-          href="https://bento.me/steeltroops"
+          href="https://bento.me/st"
           target="_blank"
           rel="noopener noreferrer"
           className="cursor-pointer hover:text-cyan-300"
