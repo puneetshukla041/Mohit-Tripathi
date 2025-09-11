@@ -1,34 +1,131 @@
-import { RiReactjsLine } from "react-icons/ri";
-import { TbBrandNextjs, TbBrandTypescript } from "react-icons/tb";
-import { PiFileCppDuotone } from "react-icons/pi";
-import { GrJava } from "react-icons/gr";
-import {
-  SiMongodb,
-  SiPytorch,
-  SiTensorflow,
-  SiUnrealengine,
-  SiNestjs,
-} from "react-icons/si";
-import { FaNodeJs, FaRust, FaGitAlt } from "react-icons/fa";
-import { FaGolang } from "react-icons/fa6";
-import { DiPython, DiDocker, DiPostgresql } from "react-icons/di";
-import { LiaAws } from "react-icons/lia";
+import React from 'react';
 import { motion } from "framer-motion";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
-const iconVariants = (duration) => ({
-  initials: { y: -10 },
-  animate: {
-    y: [10, -10],
+// You'll need to replace these paths with your actual logos
+// For example:
+// import ssiLogo from '/logos/ssi-logo.png';
+// import tataLogo from '/logos/tata-logo.png';
+// ...and so on for all certifications
+
+const certifications = [
+  {
+    name: "SSI Mantra Robotic Surgery System",
+    issuer: "SS Innovations International, Inc.",
+    issued: "Feb 2024",
+    expires: "Feb 2027",
+    credentialId: "7050004T010",
+    link: "#",
+    logo: "/logos/ssi.jpeg",
+  },
+  {
+    name: "MOP - PSA Oxygen Plant- PM CARES (TATA & DRDO)",
+    issuer: "Tata Advanced Systems Limited",
+    issued: "Aug 2021",
+    expires: null,
+    credentialId: null,
+    link: "#",
+    logo: "/logos/tata-logo.jpeg",
+  },
+  {
+    name: "Basic Hematology Technical Training - SGST1",
+    issuer: "Sysmex Europe",
+    issued: "Mar 2021",
+    expires: null,
+    credentialId: "Chqnho4DGM",
+    link: "#",
+    logo: "/logos/sysmex-logo.jpeg",
+  },
+  {
+    name: "Covid-19 : Awareness & Prevention",
+    issuer: "India Against Covid",
+    issued: "Apr 2020",
+    expires: null,
+    credentialId: "XFAS8W - CE000030",
+    link: "#",
+    logo: "/logos/india-against-covid-logo.jpeg",
+  },
+  {
+    name: "Health Emergencies Programme",
+    issuer: "World Health Organization",
+    issued: "Apr 2020",
+    expires: null,
+    credentialId: "Not Applicable",
+    link: "#",
+    logo: "/logos/who-logo.jpeg",
+  },
+  {
+    name: "nCovid-19 awareness & Prevention Programme",
+    issuer: "Apollo MedSkills Limited",
+    issued: "Apr 2020",
+    expires: null,
+    credentialId: "AMS1012025",
+    link: "#",
+    logo: "/logos/apollo-medskills-logo.jpeg",
+  },
+  {
+    name: "Multifiltrate Machine (CRRT)",
+    issuer: "Fresenius Medical Care",
+    issued: "May 2013",
+    expires: "May 2030",
+    credentialId: "FMC0147",
+    link: null,
+    logo: "/logos/fresenius-logo.jpeg",
+  },
+  {
+    name: "4008S NG Dialysis Machine",
+    issuer: "Fresenius Medical Care",
+    issued: "Jul 2012",
+    expires: "Aug 2030",
+    credentialId: "FMC02257",
+    link: null,
+    logo: "/logos/fresenius-logo.jpeg",
+  },
+  {
+    name: "Blue Driver Analyzer",
+    issuer: "Anand Brothers",
+    issued: "Sep 2015",
+    expires: "Sep 2025",
+    credentialId: "AB002518",
+    link: null,
+    logo: "/logos/anand-brothers-logo.jpeg",
+  },
+  {
+    name: "Mini Vidas & Vidas",
+    issuer: "bioMérieux",
+    issued: "Jul 2023",
+    expires: "Jul 2025",
+    credentialId: "NA",
+    link: "#",
+    logo: "/logos/biomerieux-logo.jpeg",
+  },
+];
+
+// Container for staggered animation
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
     transition: {
-      duration: duration,
-      ease: "linear",
-      repeat: Infinity,
-      repeatType: "reverse",
+      staggerChildren: 0.1, // Stagger each child's animation
     },
   },
-});
+};
 
-const Technologies = () => {
+// Variants for each certification card
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const Certifications = () => {
   return (
     <div className="pb-24 border-b border-neutral-800">
       <motion.h2
@@ -37,169 +134,62 @@ const Technologies = () => {
         transition={{ duration: 1.2 }}
         className="my-20 text-4xl text-center"
       >
-        Technologies
+        Certifications 🏆
       </motion.h2>
+
       <motion.div
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: -100 }}
-        transition={{ duration: 1.5 }}
-        className="flex flex-wrap items-center justify-center gap-5"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        className="flex flex-wrap items-center justify-center gap-6" // Increased gap for better spacing
       >
-        {/* Programming Languages */}
-        <motion.div
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <DiPython className="text-blue-500 text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <FaGolang className="text-7xl text-cyan-500" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <PiFileCppDuotone className="text-blue-700 text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <TbBrandTypescript className="text-blue-600 text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <GrJava className="text-red-600 text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <FaRust className="text-orange-600 text-7xl" />
-        </motion.div>
+        {certifications.map((cert, index) => (
+          <motion.div
+            key={index}
+            variants={cardVariants}
+            className="group relative flex flex-col items-center p-6 border border-neutral-700 rounded-3xl w-56 h-64 overflow-hidden" // Increased size and added group for hover effects
+            style={{
+              background: 'rgba(255, 255, 255, 0.05)',
+              backdropFilter: 'blur(15px)', // Increased blur for a stronger glass effect
+              WebkitBackdropFilter: 'blur(15px)',
+            }}
+            whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(0,255,255,0.2)" }} // Hover effect with shadow
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
+            {/* Pulsating background circle */}
+            <motion.div
+              className="absolute inset-0 bg-cyan-400 opacity-20 rounded-full blur-2xl"
+              animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            />
 
-        {/* Unreal Engine */}
-        <motion.div
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <SiUnrealengine className="text-white text-7xl" />
-        </motion.div>
-
-        {/* Machine Learning */}
-        <motion.div
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <SiTensorflow className="text-yellow-600 text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(6)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <SiPytorch className="text-red-600 text-7xl" />
-        </motion.div>
-
-        {/* Web Development */}
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <RiReactjsLine className="text-7xl text-cyan-400" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(3)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <TbBrandNextjs className="text-white text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(3)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <SiNestjs className="text-red-600 text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(5)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <SiMongodb className="text-green-500 text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(5)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <DiPostgresql className="text-blue-500 text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <FaNodeJs className="text-green-500 text-7xl" />
-        </motion.div>
-
-        <motion.div
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <LiaAws className="text-orange-500 text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <FaGitAlt className="text-red-600 text-7xl" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className="p-4 border-4 border-neutral-800 rounded-2xl"
-        >
-          <DiDocker className="text-blue-600 text-7xl" />
-        </motion.div>
+            <div className="relative z-10 flex flex-col items-center text-center">
+              {cert.logo && (
+                <img
+                  src={cert.logo}
+                  alt={`${cert.issuer} logo`}
+                  className="w-24 h-24 mb-4 rounded-full border-2 border-neutral-600 transition-all duration-300 group-hover:border-cyan-400"
+                />
+              )}
+              <h3 className="text-md font-semibold text-white mb-1 transition-all duration-300 group-hover:text-cyan-400">{cert.name}</h3>
+              <p className="text-sm text-neutral-400 mb-2">{cert.issuer}</p>
+              {cert.link && (
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-xs text-blue-400 hover:text-blue-300 transition-colors duration-200"
+                >
+                  Show credential <FaExternalLinkAlt className="ml-1" />
+                </a>
+              )}
+            </div>
+          </motion.div>
+        ))}
       </motion.div>
     </div>
   );
 };
 
-export default Technologies;
+export default Certifications;

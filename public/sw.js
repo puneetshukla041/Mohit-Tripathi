@@ -6,7 +6,7 @@ const DYNAMIC_CACHE_NAME = `portfolio-dynamic-v${CACHE_VERSION}`;
 // Static assets to cache immediately
 const STATIC_ASSETS = [
   "/",
-  "/profiletop.png",
+  "/profiletop.jpeg",
   // Add other static assets as needed
 ];
 
