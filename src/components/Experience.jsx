@@ -198,7 +198,7 @@ const App = () => {
         <Experience />
       </div>
       <footer className="text-center text-xs text-neutral-500 py-4">
-        &copy; 2025. All rights reserved.
+        &copy; 
       </footer>
     </div>
   );

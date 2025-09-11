@@ -6,9 +6,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import App from "./App.jsx";
 import FloatingChatButton from "./components/FloatingChatButton";
 import ErrorBoundary from "./components/ErrorBoundary";
-// Error tracking utility - available for future use
-// import errorTracker from "./utils/errorTracking";
-// import "./utils/seedBlogPosts.js"; // Temporarily disabled for deployment debugging
 import "./index.css";
 
 // Add error logging for production debugging
@@ -26,20 +23,6 @@ window.addEventListener("unhandledrejection", (event) => {
   console.error("Unhandled promise rejection:", event.reason);
 });
 
-// Register Service Worker for caching - temporarily disabled for debugging
-// if ("serviceWorker" in navigator) {
-//   window.addEventListener("load", () => {
-//     navigator.serviceWorker
-//       .register("/sw.js")
-//       .then((registration) => {
-//         console.log("SW registered: ", registration);
-//       })
-//       .catch((registrationError) => {
-//         console.log("SW registration failed: ", registrationError);
-//       });
-//   });
-// }
-
 // Create a client
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -56,7 +39,6 @@ const queryClient = new QueryClient({
 });
 
 // Lazy load components for code splitting
-const Blog = lazy(() => import("./components/Blog"));
 const BlogPost = lazy(() => import("./components/BlogPost"));
 const AdminLogin = lazy(() => import("./components/AdminLogin"));
 const AdminDashboard = lazy(() => import("./components/AdminDashboard"));
@@ -89,7 +71,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                     </>
                   }
                 />
-                <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/admin/login" element={<AdminLogin />} />
                 <Route path="/admin/dashboard" element={<AdminDashboard />} />
