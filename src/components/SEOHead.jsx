@@ -2,18 +2,18 @@ import { Helmet } from "react-helmet-async";
 import PropTypes from "prop-types";
 
 const SEOHead = ({
-  title = "Mayank's Portfolio",
+  title = "Puneet Portfolio",
   description = "Full-stack developer specializing in modern web technologies",
   image = "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1200&auto=format&fit=crop",
   url = window.location.href,
   type = "website",
-  author = "Mayank",
+  author = "Puneet",
   publishedTime,
   modifiedTime,
   tags = [],
   canonical,
 }) => {
-  const siteTitle = "Mayank's Portfolio";
+  const siteTitle = "Puneet Portfolio";
   const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
   const canonicalUrl = canonical || url;
 
@@ -38,8 +38,8 @@ const SEOHead = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-      <meta name="twitter:creator" content="@steeltroops_ai" />
-      <meta name="twitter:site" content="@steeltroops_ai" />
+      <meta name="twitter:creator" content="@steeltr" />
+      <meta name="twitter:site" content="@steeltroop" />
 
       {/* Article specific meta tags */}
       {type === "article" && (
@@ -75,12 +75,12 @@ const SEOHead = ({
             author: {
               "@type": "Person",
               name: author,
-              url: "https://github.com/steeltroops-ai",
+              url: "https://github.com/",
             },
             publisher: {
               "@type": "Person",
               name: author,
-              url: "https://github.com/steeltroops-ai",
+              url: "https://github.com/",
             },
             datePublished: publishedTime,
             dateModified: modifiedTime || publishedTime,
@@ -111,6 +111,7 @@ const SEOHead = ({
         </script>
       )}
     </Helmet>
+    
   );
 };
 
