@@ -14,7 +14,7 @@ const BLOG_POSTS = [
   },
   {
     id: 2,
-    title: "Building Scalable Web Apps with Rust",
+    title: "Building Trust",
     description: "A deep dive into why Rust is becoming a go-to language for performance-critical and secure backend systems.",
     image: "/images/blog-post-2.jpeg",
     date: "Aug 25, 2025",
