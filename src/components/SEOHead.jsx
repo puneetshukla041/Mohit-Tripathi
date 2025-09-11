@@ -2,12 +2,12 @@ import { Helmet } from "react-helmet-async";
 import PropTypes from "prop-types";
 
 const SEOHead = ({
-  title = "Puneet Portfolio",
-  description = "Full-stack developer specializing in modern web technologies",
+  title = "Mohit Tripathi",
+  description = "Regional Service Manager - India & International @ SS Innovations",
   image = "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1200&auto=format&fit=crop",
   url = window.location.href,
   type = "website",
-  author = "Puneet",
+  author = "Mohit",
   publishedTime,
   modifiedTime,
   tags = [],
