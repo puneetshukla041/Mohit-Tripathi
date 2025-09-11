@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 const BLOG_POSTS = [
   {
     id: 1,
-    title: "The Future of AI in Design",
-    description: "Exploring how artificial intelligence is revolutionizing the creative process, from generating concepts to automating tasks.",
+    title: "The Future of Surgeries",
+    description: "When International recognition start coming your way - not just for your presence, but for your Make in India “SSI Mantra” technology a breakthrough that is giving the global healthcare infrastructure a new direction in robotic surgery and offering a new hope to patients worldwide - it means you’re doing something truly extraordinary.. something that stands apart.",
     image: "/images/blog-post-1.jpeg",
     date: "Sep 1, 2025",
   },
