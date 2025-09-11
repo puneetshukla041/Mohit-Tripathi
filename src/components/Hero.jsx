@@ -24,7 +24,7 @@ const Hero = () => {
               animate="visible"
               className="pb-16 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl"
             >
-              Mayank Pratap Singh
+              Puneet Shukla
             </motion.h1>
             <motion.span
               variants={container(0.3)}
@@ -32,8 +32,7 @@ const Hero = () => {
               animate="visible"
               className="py-2 text-4xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-500 via-slate-500"
             >
-              Full Stack Web Dev & <br />
-              Machine Learning Engineer
+              Full Stack Web Developer and Content Creator
             </motion.span>
             <motion.p
               variants={container(0.6)}
@@ -53,7 +52,7 @@ const Hero = () => {
               transition={{ duration: 1, delay: 0.9 }}
               src={profilePic}
               className="rounded-3xl"
-              alt="Mayank Pratap Singh"
+              alt="Puneet"
             />
           </div>
         </div>
