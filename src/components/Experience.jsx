@@ -76,20 +76,7 @@ const EXPERIENCES = [
     ],
     logo: "/logos/fresenius.jpeg",
   },
-    {
-    year: "Oct 2011 - Apr 2012",
-    role: "Trainee Biomedical Engineer",
-    company: "Apollo Excelcare Hospital",
-    description:
-      "Gained valuable hands-on experience as a trainee on the payroll of Channel Biomed. Focused on the maintenance, documentation, and installation of medical equipment, and worked to coordinate with customers and OEMs to ensure maximum equipment uptime.",
-    technologies: [
-      "Trainee",
-      "Biomedical Engineering",
-      "Maintenance",
-      "Customer Coordination",
-    ],
-    logo: "/logos/excelcare.jpeg",
-  },
+  
   // ... rest of experiences unchanged
 ];
 
