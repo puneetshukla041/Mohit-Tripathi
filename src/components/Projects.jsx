@@ -2,78 +2,47 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// This is a placeholder for your blog post data.
 // All image paths now use the .jpeg file extension.
 const BLOG_POSTS = [
   {
     id: 1,
-    title: "The Future of Surgeries",
-    description: "When International recognition start coming your way - not just for your presence, but for your Make in India “SSI Mantra” technology a breakthrough that is giving the global healthcare infrastructure a new direction in robotic surgery and offering a new hope to patients worldwide - it means you’re doing something truly extraordinary.. something that stands apart.",
     image: "/images/blog-post-1.jpeg",
-    date: "Sep 1, 2025",
   },
   {
     id: 2,
-    title: "Building Trust",
-    description: "A deep dive into why Rust is becoming a go-to language for performance-critical and secure backend systems.",
     image: "/images/blog-post-2.jpeg",
-    date: "Aug 25, 2025",
   },
   {
     id: 3,
-    title: "Demystifying Blockchain Technology",
-    description: "Understanding the core principles of blockchain beyond cryptocurrency and its potential for various industries.",
     image: "/images/blog-post-3.jpeg",
-    date: "Aug 15, 2025",
   },
   {
     id: 4,
-    title: "A Guide to Modern CSS Layouts",
-    description: "Mastering Flexbox and Grid to create beautiful, responsive, and maintainable user interfaces.",
     image: "/images/blog-post-4.jpeg",
-    date: "Jul 30, 2025",
   },
   {
     id: 5,
-    title: "Optimizing Performance in React",
-    description: "Practical tips and techniques to make your React applications faster and more efficient.",
     image: "/images/blog-post-5.jpeg",
-    date: "Jul 10, 2025",
   },
   {
     id: 6,
-    title: "Cybersecurity Basics for Developers",
-    description: "An essential guide to protecting your applications and data from common vulnerabilities and threats.",
     image: "/images/blog-post-6.jpeg",
-    date: "Jun 20, 2025",
   },
   {
     id: 7,
-    title: "Exploring Generative AI Art",
-    description: "From Midjourney to DALL-E, we explore the world of AI-generated art and its implications for creativity.",
     image: "/images/blog-post-7.jpeg",
-    date: "Jun 5, 2025",
   },
   {
     id: 8,
-    title: "The Rise of Edge Computing",
-    description: "How moving computation closer to the data source is changing the landscape of modern applications.",
     image: "/images/blog-post-8.jpeg",
-    date: "May 25, 2025",
   },
   {
     id: 9,
-    title: "Web3: A New Era of the Internet",
-    description: "An introduction to the decentralized web and its potential to reshape digital ownership and online interactions.",
     image: "/images/blog-post-9.jpeg",
-    date: "May 10, 2025",
   },
   {
     id: 10,
-    title: "Data Science for Beginners",
-    description: "A step-by-step guide to starting your journey in data science, from foundational concepts to practical tools.",
     image: "/images/blog-post-10.jpeg",
-    date: "Apr 28, 2025",
   },
 ];
 
@@ -115,7 +84,7 @@ const Blog = () => {
         </motion.h2>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0" // Removed gap
           variants={containerVariants}
           initial="hidden"
           animate="show"
@@ -124,35 +93,16 @@ const Blog = () => {
             <motion.a
               key={post.id}
               href="#" // Replace with a dynamic link
-              className="relative rounded-3xl overflow-hidden shadow-xl group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl flex flex-col"
+              className="relative overflow-hidden group transition-all duration-300 transform hover:-translate-y-2" // Removed rounded-3xl, border, and shadow classes
               variants={cardVariants}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              style={{
-                background: 'rgba(255, 255, 255, 0.05)',
-                backdropFilter: 'blur(15px)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-              }}
             >
-              <div className="absolute inset-0 bg-neutral-800 opacity-0 group-hover:opacity-60 transition-opacity duration-300"></div>
-              
-              <div className="relative z-10 p-6 flex flex-col h-full">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full object-cover rounded-xl mb-4"
-                  // Removed fixed height to allow image to dictate card height
-                />
-                <div className="flex-grow flex flex-col">
-                  <p className="text-xs text-neutral-400 mb-2">{post.date}</p>
-                  <h3 className="text-xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-blue-400">
-                    {post.title}
-                  </h3>
-                  <p className="text-sm text-neutral-400">
-                    {post.description}
-                  </p>
-                </div>
-              </div>
+              <img
+                src={post.image}
+                alt={`Blog post ${post.id}`}
+                className="w-full h-auto object-cover" // Ensures image fills container without fixed dimensions
+              />
             </motion.a>
           ))}
         </motion.div>
