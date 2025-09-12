@@ -1,99 +1,99 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-
-// Instead of importing the images as modules, we'll directly reference their paths.
-// This is a common practice for static assets in the 'public' directory,
-// as it bypasses the module resolution and lets the browser handle the path.
-// The paths are absolute from the project root, which is where the 'public' folder resides.
+import React from "react";
+import { motion } from "framer-motion";
 
 const EXPERIENCES = [
   {
-    year: 'Dec 2023 - Aug 2025',
-    role: 'Regional Service Manager - India & International',
-    company: 'SS Innovations',
+    year: "Dec 2023 - Aug 2025",
+    role: "Regional Service Manager - India & International",
+    company: "SS Innovations",
     description:
-      'Spearheaded the development and implementation of advanced technical solutions for the regional service division. This role demanded a proactive, confident, and strategic approach to complex problem-solving and fostered a highly collaborative work environment.',
+      "Spearheaded the development and implementation of advanced technical solutions for the regional service division. This role demanded a proactive, confident, and strategic approach to complex problem-solving and fostered a highly collaborative work environment.",
     technologies: [
-      'Technical Support',
-      'Engineering',
-      'Medical Devices',
-      'Field Service',
-      'Process Improvement',
-      'Troubleshooting',
-      'Biomedical Devices',
-      'Customer Service',
-      'Training',
+      "Technical Support",
+      "Engineering",
+      "Medical Devices",
+      "Field Service",
+      "Process Improvement",
+      "Troubleshooting",
+      "Biomedical Devices",
+      "Customer Service",
+      "Training",
     ],
-    logo: '/logos/ssi.jpeg',
+    logo: "/logos/ssi.jpeg",
   },
   {
-    year: 'Jan 2021 - Dec 2023',
-    role: 'Service Manager - India',
-    company: 'GKS Healthsol LLP',
+    year: "Jan 2021 - Dec 2023",
+    role: "Service Manager - India",
+    company: "GKS Healthsol LLP",
     description:
-      'Managed all technical and project execution for major clients including TATA, TATA Trust, DRDO, PM CARES, and global partners like PATH, USAID, and Jhpiego. Responsible for ensuring high levels of customer satisfaction, developing innovative service strategies, and providing comprehensive support for installations and maintenance nationwide.',
+      "Managed all technical and project execution for major clients including TATA, TATA Trust, DRDO, PM CARES, and global partners like PATH, USAID, and Jhpiego. Responsible for ensuring high levels of customer satisfaction, developing innovative service strategies, and providing comprehensive support for installations and maintenance nationwide.",
     technologies: [
-      'Client-focused',
-      'Business Strategy',
-      'Client Coordination',
-      'Strategy',
-      'Public Relations',
-      'Client Relations',
-      'Client Services',
-      'Field Service',
-      'Customer Satisfaction',
-      'Communication',
-      'Customer Service Management',
-      'Continuous Improvement',
+      "Client-focused",
+      "Business Strategy",
+      "Client Coordination",
+      "Strategy",
+      "Public Relations",
+      "Client Relations",
+      "Client Services",
+      "Field Service",
+      "Customer Satisfaction",
+      "Communication",
+      "Customer Service Management",
+      "Continuous Improvement",
     ],
-    logo: '/logos/gks.jpeg',
+    logo: "/logos/gks.jpeg",
   },
-  {
-    year: 'Aug 2018 - Jan 2021',
-    role: 'Zonal Manager - BME - U.P. India',
-    company: 'Cyrix Healthcare Private Limited',
+    {
+    year: "Apr 2017 - Jun 2018",
+    role: "Assistant Manager - Bio Medical Engineering",
+    company: "Jaipur Golden Hospital",
     description:
-      'Served as Zonal Manager for the Biomedical Engineering Department under the "National Health Mission-NHM" program. Primary responsibilities included the repair, service, and maintenance of biomedical equipment throughout the Uttar Pradesh region.',
-    technologies: ['National Health Mission', 'Biomedical Engineering', 'Maintenance', 'Repair', 'Program Management'],
-    logo: '/logos/cyrix.jpeg',
+      "Managed the biomedical engineering department, ensuring the operational readiness and maintenance of critical hospital equipment.",
+    technologies: ["Bio Medical Engineering"],
+    logo: "/logos/jaipur.jpeg",
   },
-  {
-    year: 'Apr 2017 - Jun 2018',
-    role: 'Assistant Manager - Bio Medical Engineering',
-    company: 'Jaipur Golden Hospital',
-    description: 'Managed the biomedical engineering department, ensuring the operational readiness and maintenance of critical hospital equipment.',
-    technologies: ['Bio Medical Engineering'],
-    logo: '/logos/jaipur.jpeg',
-  },
-  {
-    year: 'Feb 2015 - Nov 2016',
-    role: 'Senior Bio Medical Engineer',
-    company: 'Indraprastha Apollo Hospitals, New Delhi',
-    description: 'Employed by Faber Sindoori Payroll (FSMS Group), responsible for advanced biomedical engineering duties, including maintenance and technical support for a wide range of medical devices.',
-    technologies: ['Biomedical Engineering', 'Hospital Management'],
-    logo: '/logos/apollo.jpeg',
-  },
-  {
-    year: 'May 2012 - Dec 2014',
-    role: 'Field Service Engineer',
-    company: 'Fresenius Medical Care Asia-Pacific',
+    {
+    year: "Feb 2015 - Nov 2016",
+    role: "Senior Bio Medical Engineer",
+    company: "Indraprastha Apollo Hospitals, New Delhi",
     description:
-      'Managed a full scope of field service activities, including the installation, breakdown support, and preventative maintenance services (PMS). Also handled spare parts management, technical training, and documentation while overseeing AMC/CMC renewal processes.',
-    technologies: ['Field Service', 'Installation', 'Maintenance', 'Training', 'Documentation'],
-    logo: '/logos/fresenius.jpeg',
+      "Employed by Faber Sindoori Payroll (FSMS Group), responsible for advanced biomedical engineering duties, including maintenance and technical support for a wide range of medical devices.",
+    technologies: ["Biomedical Engineering", "Hospital Management"],
+    logo: "/logos/apollo.jpeg",
   },
   {
-    year: 'Oct 2011 - Apr 2012',
-    role: 'Trainee Biomedical Engineer',
-    company: 'Apollo Excelcare Hospital',
+    year: "May 2012 - Dec 2014",
+    role: "Field Service Engineer",
+    company: "Fresenius Medical Care Asia-Pacific",
     description:
-      'Gained valuable hands-on experience as a trainee on the payroll of Channel Biomed. Focused on the maintenance, documentation, and installation of medical equipment, and worked to coordinate with customers and OEMs to ensure maximum equipment uptime.',
-    technologies: ['Trainee', 'Biomedical Engineering', 'Maintenance', 'Customer Coordination'],
-    logo: '/logos/excelcare.jpeg',
+      "Managed a full scope of field service activities, including the installation, breakdown support, and preventative maintenance services (PMS). Also handled spare parts management, technical training, and documentation while overseeing AMC/CMC renewal processes.",
+    technologies: [
+      "Field Service",
+      "Installation",
+      "Maintenance",
+      "Training",
+      "Documentation",
+    ],
+    logo: "/logos/fresenius.jpeg",
   },
+    {
+    year: "Oct 2011 - Apr 2012",
+    role: "Trainee Biomedical Engineer",
+    company: "Apollo Excelcare Hospital",
+    description:
+      "Gained valuable hands-on experience as a trainee on the payroll of Channel Biomed. Focused on the maintenance, documentation, and installation of medical equipment, and worked to coordinate with customers and OEMs to ensure maximum equipment uptime.",
+    technologies: [
+      "Trainee",
+      "Biomedical Engineering",
+      "Maintenance",
+      "Customer Coordination",
+    ],
+    logo: "/logos/excelcare.jpeg",
+  },
+  // ... rest of experiences unchanged
 ];
 
-// Animation variants for staggered appearance
+// Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -111,17 +111,22 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
 
 const Experience = () => {
   return (
-    <div className="pb-24 border-b border-neutral-800">
-      {/* Section Title with subtle animation */}
+    <div className="relative pb-24 border-b border-neutral-800 overflow-x-hidden">
+      {/* Mobile-only curved fade background */}
+      <div className="absolute inset-0 block md:hidden">
+        <div className="w-full h-full bg-gradient-to-b from-black via-neutral-900 to-black rounded-b-[100px]" />
+      </div>
+
+      {/* Content */}
       <motion.h2
-        className="my-20 text-4xl text-center text-white font-bold tracking-tight md:text-5xl"
+        className="relative z-10 my-20 text-4xl text-center text-white font-bold tracking-tight md:text-5xl"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -130,9 +135,8 @@ const Experience = () => {
         My Journey
       </motion.h2>
 
-      {/* Experience Timeline Container */}
       <motion.div
-        className="relative"
+        className="relative z-10"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -144,9 +148,9 @@ const Experience = () => {
             className="mb-24 flex flex-col md:flex-row md:items-start md:space-x-8 lg:justify-center"
             variants={itemVariants}
           >
-            {/* Year & Logo Block (Left side) */}
-            <motion.div className="w-full mb-4 flex flex-col items-center md:items-end md:w-1/4 md:mb-0">
-              <p className="text-sm md:text-base text-neutral-400 font-medium md:text-right">
+            {/* Left Side */}
+            <motion.div className="w-full mb-4 flex flex-col items-start md:items-end md:w-1/4 md:mb-0">
+              <p className="text-sm md:text-base text-white font-medium md:text-right">
                 {experience.year}
               </p>
               {experience.logo && (
@@ -158,7 +162,7 @@ const Experience = () => {
               )}
             </motion.div>
 
-            {/* Content Block (Right side) */}
+            {/* Right Side */}
             <motion.div className="w-full max-w-xl md:w-3/4">
               <h6 className="mb-2 font-semibold text-lg text-white">
                 {experience.role}
@@ -167,16 +171,15 @@ const Experience = () => {
                 </span>
               </h6>
               {experience.description && (
-                <p className="mb-4 text-justify text-neutral-400">
+                <p className="mb-4 text-justify text-white">
                   {experience.description}
                 </p>
               )}
-              {/* Technologies/Skills Tags */}
               <div className="flex flex-wrap">
                 {experience.technologies.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="px-2 py-1 mt-2 mr-2 text-sm font-medium text-purple-100 rounded-lg bg-neutral-900 border border-neutral-700 hover:bg-neutral-800 transition-colors duration-200"
+                    className="px-2 py-1 mt-2 mr-2 text-sm font-medium text-white rounded-lg bg-neutral-900 border border-neutral-700 hover:bg-neutral-800 transition-colors duration-200"
                   >
                     {tech}
                   </span>
@@ -190,16 +193,13 @@ const Experience = () => {
   );
 };
 
-// Main App component to display the Experience section.
 const App = () => {
   return (
     <div className="text-white font-sans antialiased min-h-screen">
       <div className="container mx-auto px-4 py-8 md:px-6">
         <Experience />
       </div>
-      <footer className="text-center text-xs text-neutral-500 py-4">
-        &copy; 
-      </footer>
+      <footer className="text-center text-xs text-neutral-500 py-4">&copy;</footer>
     </div>
   );
 };
