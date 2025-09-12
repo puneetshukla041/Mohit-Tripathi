@@ -1,8 +1,82 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FiSend, FiCheck } from "react-icons/fi";
-import { useSubmitContactMessage } from "../hooks/useContactQueries";
-import { ContactService } from "../services/ContactService";
+import { useMutation, QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+// --- START: Contact Form Validation Service ---
+// This file contains the logic for validating the contact form data.
+const ContactService = {
+  /**
+   * Validates the provided contact form data.
+   * @param {object} formData - The form data object to validate.
+   * @param {string} formData.name - The sender's name.
+   * @param {string} formData.email - The sender's email.
+   * @param {string} formData.subject - The message subject.
+   * @param {string} formData.message - The message body.
+   * @returns {{success: boolean, errors: object}} The validation result.
+   */
+  validateContactForm: (formData) => {
+    const errors = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!formData.name || formData.name.trim() === '') {
+      errors.name = "Name is required.";
+    }
+
+    if (!formData.email || formData.email.trim() === '') {
+      errors.email = "Email is required.";
+    } else if (!emailRegex.test(formData.email)) {
+      errors.email = "Please enter a valid email address.";
+    }
+
+    if (!formData.subject || formData.subject.trim() === '') {
+      errors.subject = "Subject is required.";
+    }
+
+    if (!formData.message || formData.message.trim() === '') {
+      errors.message = "Message is required.";
+    }
+
+    // Check for message length
+    if (formData.message && formData.message.length > 2000) {
+      errors.message = "Message cannot exceed 2000 characters.";
+    }
+
+    // Return success if no errors were found.
+    const success = Object.keys(errors).length === 0;
+
+    return {
+      success,
+      errors
+    };
+  }
+};
+// --- END: Contact Form Validation Service ---
+
+// --- START: useSubmitContactMessage Hook ---
+// This is a mock API call. In a real application, this would send data to a backend.
+const submitContactMessage = async (formData) => {
+  console.log("Submitting form data:", formData);
+  
+  return new Promise((resolve, reject) => {
+    // Simulate network delay
+    setTimeout(() => {
+      // Simulate a successful response
+      console.log("Mock API call successful!");
+      resolve({ success: true, message: "Message sent successfully!" });
+      
+      // Uncomment the line below and comment the one above to test an error state
+      // reject(new Error("Simulated network error. Please try again later."));
+    }, 2000); // 2-second delay
+  });
+};
+
+const useSubmitContactMessage = () => {
+  return useMutation({
+    mutationFn: submitContactMessage,
+  });
+};
+// --- END: useSubmitContactMessage Hook ---
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -105,7 +179,7 @@ const Contact = () => {
           >
             <FiCheck className="text-xl text-green-400" />
             <p className="text-green-400">
-              Your message has been sent successfully! I&apos;ll get back to you
+              Your message has been sent successfully! I'll get back to you
               soon.
             </p>
           </motion.div>
@@ -261,6 +335,17 @@ const Contact = () => {
   );
 };
 
-// Contact component doesn't currently accept props
+const queryClient = new QueryClient();
 
-export default Contact;
+// The main App component that provides the QueryClient context
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <div className="min-h-screen bg-neutral-950 text-neutral-200">
+      <div className="container px-8 mx-auto lg:px-14">
+        <Contact />
+      </div>
+    </div>
+  </QueryClientProvider>
+);
+
+export default App;
