@@ -33,6 +33,7 @@
     "dompurify": "^3.2.6",
     "framer-motion": "^10.18.0",
     "highlight.js": "^11.10.0",
+    "lucide-react": "^0.544.0",
     "prismjs": "^1.30.0",
     "prop-types": "^15.8.1",
     "quill": "^2.0.3",

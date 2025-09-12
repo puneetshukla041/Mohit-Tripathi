@@ -118,6 +118,8 @@ const cardVariants = {
   },
 };
 
+
+
 const Certifications = () => {
   return (
     <div className="pb-24 border-b border-neutral-800">
