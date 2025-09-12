@@ -14,46 +14,19 @@ const Navbar = () => {
         />
       </div>
       <div className="flex justify-center gap-4 -mr-4 text-2xl items-center">
+
+
+
         <a
-          href="https://x.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cursor-pointer hover:text-cyan-300"
-        >
-          <FaXTwitter />
-        </a>
-        <a
-          href="https://github.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cursor-pointer hover:text-cyan-300"
-        >
-          <FiGithub />
-        </a>
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cursor-pointer hover:text-cyan-300"
-        >
-          <FiInstagram />
-        </a>
-        <a
-          href="https://linkedin.com/in/"
+          href="https://www.linkedin.com/in/mohitripathi"
+        
           target="_blank"
           rel="noopener noreferrer"
           className="cursor-pointer hover:text-cyan-300"
         >
           <FaLinkedinIn />
         </a>
-        <a
-          href="https://bento.me/st"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cursor-pointer hover:text-cyan-300"
-        >
-          <AiOutlineLink />
-        </a>
+   
       </div>
     </nav>
   );
