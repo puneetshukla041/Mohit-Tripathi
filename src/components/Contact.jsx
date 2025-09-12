@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FiSend, FiCheck } from "react-icons/fi";
 import { useMutation, QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 // --- START: Contact Form Validation Service ---
@@ -177,7 +176,9 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center p-4 mb-8 space-x-3 border border-green-700 rounded-lg bg-green-900/20 backdrop-blur-sm"
           >
-            <FiCheck className="text-xl text-green-400" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-xl text-green-400">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
             <p className="text-green-400">
               Your message has been sent successfully! I'll get back to you
               soon.
@@ -186,8 +187,8 @@ const Contact = () => {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-8">
-          {/* Two-Column Layout */}
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-2">
+          {/* Two-Column Layout, now responsive for mobile */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {/* Left Column - Name, Email, Subject */}
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
@@ -312,7 +313,10 @@ const Contact = () => {
                 </>
               ) : (
                 <>
-                  <FiSend className="text-base" />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-base">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
                   <span>Send Message</span>
                 </>
               )}
