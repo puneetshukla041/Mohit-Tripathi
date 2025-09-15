@@ -56,7 +56,7 @@ const EXPERIENCES = [
     description:
       "Managed the biomedical engineering department, ensuring the operational readiness and maintenance of critical hospital equipment.",
     technologies: ["Bio Medical Engineering"],
-    logo: "/logos/apoolo.jpeg",
+    logo: "/logos/apollo.jpeg",
   },
     {
     year: "Feb 2015 - Nov 2016",
@@ -65,7 +65,7 @@ const EXPERIENCES = [
     description:
       "Employed by Faber Sindoori Payroll (FSMS Group), responsible for advanced biomedical engineering duties, including maintenance and technical support for a wide range of medical devices.",
     technologies: ["Biomedical Engineering", "Hospital Management"],
-    logo: "/logos/apollo.jpeg",
+    logo: "/logos/apoollo.jpeg",
   },
   {
     year: "May 2012 - Dec 2014",
