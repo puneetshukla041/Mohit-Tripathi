@@ -135,13 +135,13 @@ const Certifications = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-wrap items-center justify-center gap-6"
+        className="flex flex-wrap items-stretch justify-center gap-6 p-4 sm:p-0" // Added padding for small screens and items-stretch to ensure equal height
       >
         {certifications.map((cert, index) => (
           <motion.div
             key={index}
             variants={cardVariants}
-            className="group relative flex flex-col items-center p-6 border border-neutral-700 rounded-3xl w-56 h-auto overflow-hidden text-center"
+            className="group relative flex flex-col items-center p-6 border border-neutral-700 rounded-3xl w-full sm:w-64 md:w-72 lg:w-80 h-auto overflow-hidden text-center max-w-sm" // Adjusted widths for better responsiveness
             style={{
               background: 'rgba(255, 255, 255, 0.05)',
               backdropFilter: 'blur(15px)',
