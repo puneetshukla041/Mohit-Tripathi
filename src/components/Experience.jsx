@@ -65,7 +65,7 @@ const EXPERIENCES = [
     description:
       "Employed by Faber Sindoori Payroll (FSMS Group), responsible for advanced biomedical engineering duties, including maintenance and technical support for a wide range of medical devices.",
     technologies: ["Biomedical Engineering", "Hospital Management"],
-    logo: "/logos/apoollo.jpeg",
+    logo: "/logos/apoolo.jpeg",
   },
   {
     year: "May 2012 - Dec 2014",
