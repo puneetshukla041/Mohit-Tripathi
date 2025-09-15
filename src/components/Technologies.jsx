@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
+import { FaExternalLinkAlt } from 'react-icons/fa'; // Import the new icon
 
 const certifications = [
   {
@@ -8,7 +9,7 @@ const certifications = [
     issued: "Feb 2024",
     expires: "Feb 2027",
     credentialId: "7050004T010",
-    link: "#",
+    link: "https://www.ssinnovations.org/mantra-surgical-robotic-system/", // Example link
     logo: "/logos/ssi.jpeg",
   },
   {
@@ -17,7 +18,7 @@ const certifications = [
     issued: "Aug 2021",
     expires: null,
     credentialId: null,
-    link: "#",
+    link: "https://www.tataadvancedsystems.com/", // Example link
     logo: "/logos/tata-logo.jpeg",
   },
   {
@@ -26,7 +27,7 @@ const certifications = [
     issued: "Mar 2021",
     expires: null,
     credentialId: "Chqnho4DGM",
-    link: "#",
+    link: "https://www.sysmex-europe.com/", // Example link
     logo: "/logos/sysmex-logo.jpeg",
   },
   {
@@ -44,7 +45,7 @@ const certifications = [
     issued: "Apr 2020",
     expires: null,
     credentialId: "Not Applicable",
-    link: "#",
+    link: "https://www.who.int/emergencies/programmes", // Example link
     logo: "/logos/who-logo.jpeg",
   },
   {
@@ -53,7 +54,7 @@ const certifications = [
     issued: "Apr 2020",
     expires: null,
     credentialId: "AMS1012025",
-    link: "#",
+    link: "https://www.apollomedskills.com/", // Example link
     logo: "/logos/apollo-medskills-logo.jpeg",
   },
   {
@@ -62,7 +63,7 @@ const certifications = [
     issued: "May 2013",
     expires: "May 2030",
     credentialId: "FMC0147",
-    link: null,
+    link: "https://www.freseniusmedicalcare.com/en/products/crrt-multifiltrate", // Example link
     logo: "/logos/fresenius-logo.jpeg",
   },
   {
@@ -71,7 +72,7 @@ const certifications = [
     issued: "Jul 2012",
     expires: "Aug 2030",
     credentialId: "FMC02257",
-    link: null,
+    link: "https://www.freseniusmedicalcare.com/en/products/dialysis-machines", // Example link
     logo: "/logos/fresenius-logo.jpeg",
   },
   {
@@ -80,7 +81,7 @@ const certifications = [
     issued: "Sep 2015",
     expires: "Sep 2025",
     credentialId: "AB002518",
-    link: null,
+    link: "#",
     logo: "/logos/anand-brothers-logo.jpeg",
   },
   {
@@ -89,7 +90,7 @@ const certifications = [
     issued: "Jul 2023",
     expires: "Jul 2025",
     credentialId: "NA",
-    link: "#",
+    link: "https://www.biomerieux.com/global/en/products/vidas.html", // Example link
     logo: "/logos/biomerieux-logo.jpeg",
   },
 ];
@@ -118,8 +119,6 @@ const cardVariants = {
   },
 };
 
-
-
 const Certifications = () => {
   return (
     <div className="pb-24 border-b border-neutral-800">
@@ -129,7 +128,7 @@ const Certifications = () => {
         transition={{ duration: 1.2 }}
         className="my-20 text-4xl text-center"
       >
-        Certifications 
+        Certifications
       </motion.h2>
 
       <motion.div
@@ -137,19 +136,19 @@ const Certifications = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-wrap items-center justify-center gap-6" // Increased gap for better spacing
+        className="flex flex-wrap items-center justify-center gap-6"
       >
         {certifications.map((cert, index) => (
           <motion.div
             key={index}
             variants={cardVariants}
-            className="group relative flex flex-col items-center p-6 border border-neutral-700 rounded-3xl w-56 h-64 overflow-hidden" // Increased size and added group for hover effects
+            className="group relative flex flex-col items-center p-6 border border-neutral-700 rounded-3xl w-56 h-64 overflow-hidden"
             style={{
               background: 'rgba(255, 255, 255, 0.05)',
-              backdropFilter: 'blur(15px)', // Increased blur for a stronger glass effect
+              backdropFilter: 'blur(15px)',
               WebkitBackdropFilter: 'blur(15px)',
             }}
-            whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(0,255,255,0.2)" }} // Hover effect with shadow
+            whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(0,255,255,0.2)" }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             {/* Pulsating background circle */}
@@ -159,27 +158,27 @@ const Certifications = () => {
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             />
 
-            <div className="relative z-10 flex flex-col items-center text-center">
-              {cert.logo && (
-                <img
-                  src={cert.logo}
-                  alt={`${cert.issuer} logo`}
-                  className="w-24 h-24 mb-4 rounded-full border-2 border-neutral-600 transition-all duration-300 group-hover:border-cyan-400"
-                />
-              )}
-              <h3 className="text-md font-semibold text-white mb-1 transition-all duration-300 group-hover:text-cyan-400">{cert.name}</h3>
-              <p className="text-sm text-neutral-400 mb-2">{cert.issuer}</p>
-              {cert.link && (
-                <a
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-xs text-blue-400 hover:text-blue-300 transition-colors duration-200"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
-              )}
-            </div>
+            {/* Certification Content */}
+            <a href={cert.link} target="_blank" rel="noopener noreferrer" className="relative z-10 flex flex-col items-center text-center w-full h-full justify-between cursor-pointer">
+              <div className="flex flex-col items-center">
+                {cert.logo && (
+                  <img
+                    src={cert.logo}
+                    alt={`${cert.issuer} logo`}
+                    className="w-24 h-24 mb-4 rounded-full border-2 border-neutral-600 transition-all duration-300 group-hover:border-cyan-400"
+                  />
+                )}
+                <h3 className="text-md font-semibold text-white mb-1 transition-all duration-300 group-hover:text-cyan-400">{cert.name}</h3>
+                <p className="text-sm text-neutral-400">{cert.issuer}</p>
+              </div>
+
+              {/* Explore Button */}
+              <button
+                className="mt-4 px-4 py-2 bg-neutral-700 text-white rounded-full flex items-center gap-2 transition-all duration-300 group-hover:bg-cyan-600 group-hover:text-black"
+              >
+                Explore <FaExternalLinkAlt className="text-xs" />
+              </button>
+            </a>
           </motion.div>
         ))}
       </motion.div>
