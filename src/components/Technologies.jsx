@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import { FaExternalLinkAlt } from 'react-icons/fa'; // Import the new icon
 
 const certifications = [
   {
@@ -9,7 +8,7 @@ const certifications = [
     issued: "Feb 2024",
     expires: "Feb 2027",
     credentialId: "7050004T010",
-    link: "https://www.ssinnovations.org/mantra-surgical-robotic-system/", // Example link
+    description: "Training on the advanced SSI Mantra Robotic Surgery System for precision surgical procedures. Focus on system operation and maintenance.",
     logo: "/logos/ssi.jpeg",
   },
   {
@@ -18,7 +17,7 @@ const certifications = [
     issued: "Aug 2021",
     expires: null,
     credentialId: null,
-    link: "https://www.tataadvancedsystems.com/", // Example link
+    description: "Expertise in the operation and maintenance of PSA Oxygen Plants, critical for providing medical-grade oxygen.",
     logo: "/logos/tata-logo.jpeg",
   },
   {
@@ -27,7 +26,7 @@ const certifications = [
     issued: "Mar 2021",
     expires: null,
     credentialId: "Chqnho4DGM",
-    link: "https://www.sysmex-europe.com/", // Example link
+    description: "Technical training on Sysmex hematology analyzers, covering basic principles, operation, and troubleshooting of blood cell counters.",
     logo: "/logos/sysmex-logo.jpeg",
   },
   {
@@ -36,7 +35,7 @@ const certifications = [
     issued: "Apr 2020",
     expires: null,
     credentialId: "XFAS8W - CE000030",
-    link: "#",
+    description: "Certification in Covid-19 awareness and prevention protocols, ensuring safety and compliance in public and medical settings.",
     logo: "/logos/india-against-covid-logo.jpeg",
   },
   {
@@ -45,7 +44,7 @@ const certifications = [
     issued: "Apr 2020",
     expires: null,
     credentialId: "Not Applicable",
-    link: "https://www.who.int/emergencies/programmes", // Example link
+    description: "Training from WHO on preparing for and responding to global health emergencies and public health crises.",
     logo: "/logos/who-logo.jpeg",
   },
   {
@@ -54,7 +53,7 @@ const certifications = [
     issued: "Apr 2020",
     expires: null,
     credentialId: "AMS1012025",
-    link: "https://www.apollomedskills.com/", // Example link
+    description: "Program focused on the awareness and prevention of novel coronavirus, including hygiene and safety measures.",
     logo: "/logos/apollo-medskills-logo.jpeg",
   },
   {
@@ -63,7 +62,7 @@ const certifications = [
     issued: "May 2013",
     expires: "May 2030",
     credentialId: "FMC0147",
-    link: "https://www.freseniusmedicalcare.com/en/products/crrt-multifiltrate", // Example link
+    description: "Specialized training on the Multifiltrate machine for Continuous Renal Replacement Therapy (CRRT).",
     logo: "/logos/fresenius-logo.jpeg",
   },
   {
@@ -72,7 +71,7 @@ const certifications = [
     issued: "Jul 2012",
     expires: "Aug 2030",
     credentialId: "FMC02257",
-    link: "https://www.freseniusmedicalcare.com/en/products/dialysis-machines", // Example link
+    description: "Comprehensive training on the 4008S NG Dialysis Machine, including setup, operation, and maintenance for hemodialysis.",
     logo: "/logos/fresenius-logo.jpeg",
   },
   {
@@ -81,7 +80,7 @@ const certifications = [
     issued: "Sep 2015",
     expires: "Sep 2025",
     credentialId: "AB002518",
-    link: "#",
+    description: "Certified in the use of the Blue Driver Analyzer for efficient vehicle diagnostics and analysis.",
     logo: "/logos/anand-brothers-logo.jpeg",
   },
   {
@@ -90,7 +89,7 @@ const certifications = [
     issued: "Jul 2023",
     expires: "Jul 2025",
     credentialId: "NA",
-    link: "https://www.biomerieux.com/global/en/products/vidas.html", // Example link
+    description: "Technical proficiency with the Mini Vidas and Vidas immunoassay systems for rapid and accurate disease diagnosis.",
     logo: "/logos/biomerieux-logo.jpeg",
   },
 ];
@@ -142,7 +141,7 @@ const Certifications = () => {
           <motion.div
             key={index}
             variants={cardVariants}
-            className="group relative flex flex-col items-center p-6 border border-neutral-700 rounded-3xl w-56 h-64 overflow-hidden"
+            className="group relative flex flex-col items-center p-6 border border-neutral-700 rounded-3xl w-56 h-auto overflow-hidden text-center"
             style={{
               background: 'rgba(255, 255, 255, 0.05)',
               backdropFilter: 'blur(15px)',
@@ -159,26 +158,18 @@ const Certifications = () => {
             />
 
             {/* Certification Content */}
-            <a href={cert.link} target="_blank" rel="noopener noreferrer" className="relative z-10 flex flex-col items-center text-center w-full h-full justify-between cursor-pointer">
-              <div className="flex flex-col items-center">
-                {cert.logo && (
-                  <img
-                    src={cert.logo}
-                    alt={`${cert.issuer} logo`}
-                    className="w-24 h-24 mb-4 rounded-full border-2 border-neutral-600 transition-all duration-300 group-hover:border-cyan-400"
-                  />
-                )}
-                <h3 className="text-md font-semibold text-white mb-1 transition-all duration-300 group-hover:text-cyan-400">{cert.name}</h3>
-                <p className="text-sm text-neutral-400">{cert.issuer}</p>
-              </div>
-
-              {/* Explore Button */}
-              <button
-                className="mt-4 px-4 py-2 bg-neutral-700 text-white rounded-full flex items-center gap-2 transition-all duration-300 group-hover:bg-cyan-600 group-hover:text-black"
-              >
-                Explore <FaExternalLinkAlt className="text-xs" />
-              </button>
-            </a>
+            <div className="relative z-10 flex flex-col items-center">
+              {cert.logo && (
+                <img
+                  src={cert.logo}
+                  alt={`${cert.issuer} logo`}
+                  className="w-24 h-24 mb-4 rounded-full border-2 border-neutral-600 transition-all duration-300 group-hover:border-cyan-400"
+                />
+              )}
+              <h3 className="text-md font-semibold text-white mb-1 transition-all duration-300 group-hover:text-cyan-400">{cert.name}</h3>
+              <p className="text-sm text-neutral-400 mb-2">{cert.issuer}</p>
+              <p className="text-xs text-neutral-300 mt-2">{cert.description}</p>
+            </div>
           </motion.div>
         ))}
       </motion.div>
