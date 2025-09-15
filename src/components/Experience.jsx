@@ -56,7 +56,7 @@ const EXPERIENCES = [
     description:
       "Managed the biomedical engineering department, ensuring the operational readiness and maintenance of critical hospital equipment.",
     technologies: ["Bio Medical Engineering"],
-    logo: "/logos/jaipur.jpeg",
+    logo: "/logos/apoolo.jpeg",
   },
     {
     year: "Feb 2015 - Nov 2016",
